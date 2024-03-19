@@ -55,8 +55,8 @@ export default {
 
     methods: {
     rmvUser(){
-        console.log(this.payload);
-        this.$store.dispatch('deleteUser', this.payload)
+        console.log(userID);
+        this.$store.dispatch('deleteUser', userID)
     }
   },
     computed: {
@@ -73,7 +73,7 @@ export default {
     },
     mounted() {
         this.getUsers,
-        this.rmvUser,
+        
         // this.editUser,
         this.deleteUser
     }
