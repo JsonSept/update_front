@@ -72,7 +72,7 @@ export default createStore({
       }
     },
 
-    async deleteUser(context,payload) {
+    async deleteUser(context,userID) {
         let result = (await axios.delete(baseUrl + "/users/" + payload.userID)).data
         console.log(result);
         if(result) {
