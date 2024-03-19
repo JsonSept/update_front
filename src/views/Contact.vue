@@ -1,0 +1,79 @@
+<template>
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form action="https://formspree.io/f/xyyrdjdl"
+  method="POST">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" v-model="formData.name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" v-model="formData.email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea name="message" id="message" rows="4" v-model="formData.message" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        formData: {
+          name: '',
+          email: '',
+          message: ''
+        }
+      };
+    },
+    methods: {
+      submitForm() {
+        // Here you can implement logic to send the form data to your backend or perform any other action
+        console.log('Form submitted with data:', this.formData);
+      }
+    }
+  };
+  </script>
+  
+  <style scoped>
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  </style>
